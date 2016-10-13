@@ -42,9 +42,11 @@ INSTALLED_APPS = [
     'api_client',
     'api_operator',
     'api_administrator',
+
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'corsheaders',
 
 ]
 
@@ -56,8 +58,10 @@ REST_FRAMEWORK = {
 
 
 MIDDLEWARE = [
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -138,3 +142,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+CORS_ORIGIN_WHITELIST = (
+    'localhost:80',
+)
