@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'system',
+    'app',
     'api_client',
     'api_operator',
     'api_administrator',
@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'directstorage.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'test_base',
+        'NAME': 'ds2_database',
         'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': '127.0.0.1',
@@ -143,6 +143,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:80',
-)
+CORS_ORIGIN_ALLOW_ALL = True
+
+# CORS_ORIGIN_WHITELIST = (
+#     'localhost:80',
+# )
