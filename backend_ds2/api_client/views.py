@@ -22,10 +22,9 @@ class ProjectView(views.APIView):
 
     def post(self, request):
         receivedData = request.data
-        print (request.user.id)
 
         try:
-            projectID = receivedData['']
+            projectID = receivedData['projectID']
         except KeyError:
             return response.Response(status=status.HTTP_400_BAD_REQUEST)
 
