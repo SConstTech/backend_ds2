@@ -210,6 +210,10 @@ class TokenSerializer(serializers.ModelSerializer):
         fields = (
             'auth_token',
         )
+class TokenGroupSerializer(serializers.Serializer):
+    token = serializers.CharField()
+    group = serializers.CharField()
+
 
 
 class SerializersManager(object):

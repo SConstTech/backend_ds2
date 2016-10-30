@@ -1,5 +1,6 @@
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth import get_user_model
+from django.contrib.auth import get_user_model
 
 from rest_framework import generics, permissions, status, response, views
 from rest_framework.response import Response
@@ -88,9 +89,10 @@ class LoginView(utils.ActionViewMixin, generics.GenericAPIView):
 
     def action(self, serializer):
         token = utils.login_user(self.request, serializer.user)
-        token_serializer_class = serializers.serializers_manager.get('token')
+        group = serializer.user.groups.first()
+        token_serializer_class = serializers.serializers_manager.get('token_group')
         return Response(
-            data=token_serializer_class(token).data,
+            data=token_serializer_class({'token':token, 'group':group}).data,
             status=status.HTTP_200_OK,
         )
 

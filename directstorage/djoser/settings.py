@@ -26,6 +26,7 @@ default_settings = {
         'user_registration': 'djoser.serializers.UserRegistrationSerializer',
         'user': 'djoser.serializers.UserSerializer',
         'token': 'djoser.serializers.TokenSerializer',
+        'token_group': 'djoser.serializers.TokenGroupSerializer',
     },
     'LOGOUT_ON_PASSWORD_CHANGE': False,
 }
