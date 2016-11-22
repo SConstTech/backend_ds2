@@ -1,0 +1,6 @@
+Django==1.10.2
+django-cors-headers==1.2.2
+djangorestframework==3.4.7
+djoser==0.5.1
+pkg-resources==0.0.0
+psycopg2==2.6.2
