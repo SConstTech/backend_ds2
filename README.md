@@ -11,10 +11,11 @@ https://github.com/sunscrapers/djoser
 Трябва да инсталираш следните неща:
 
 virtualenv
-postgresql сървър
+и
+postgresql server
 
 
 Да си конфигурираш Virtual Environment (http://docs.python-guide.org/en/latest/dev/virtualenvs/)
 Да инсталираш всички неща от requirements (pip install -r requirements.txt)
 
-Сървъра се стартира с python manage.py runserver
+Сървъра се стартира с python manage.py runserver (от главната папка)
