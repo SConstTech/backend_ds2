@@ -1,2 +1,3 @@
 *.pyc
 frontend_ds2/
+.idea/*
