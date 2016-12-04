@@ -5,8 +5,10 @@ from django.contrib.auth import get_user_model
 from rest_framework import generics, permissions, status, response, views
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-
+from braces.views import GroupRequiredMixin
 from . import serializers, settings, utils, signals
+
+from permissions import isOperator
 
 
 User = get_user_model()
@@ -234,6 +236,7 @@ class UserView(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.serializers_manager.get('user')
     permission_classes = (
         permissions.IsAuthenticated,
+        isOperator
     )
 
     def get_object(self, *args, **kwargs):
