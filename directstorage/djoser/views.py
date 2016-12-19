@@ -236,7 +236,6 @@ class UserView(generics.RetrieveUpdateAPIView):
     serializer_class = serializers.serializers_manager.get('user')
     permission_classes = (
         permissions.IsAuthenticated,
-        isOperator
     )
 
     def get_object(self, *args, **kwargs):

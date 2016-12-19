@@ -18,6 +18,9 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = tuple(User.REQUIRED_FIELDS) + (
             User._meta.pk.name,
+            'groups',
+            'first_name',
+            'last_name',
             User.USERNAME_FIELD,
         )
         read_only_fields = (
