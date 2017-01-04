@@ -25,7 +25,7 @@ SECRET_KEY = 've&+2@#fj4do&i8q82^$o$*!_gdssutpsb#7(2nvy^vtnsi+fp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,15 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'app',
     'api_client',
     'api_operator',
     'api_administrator',
+    'djoser',
 
     'rest_framework',
     'rest_framework.authtoken',
-    'djoser',
     'corsheaders',
 
 ]
@@ -146,5 +146,5 @@ STATIC_ROOT = 'static/'
 CORS_ORIGIN_ALLOW_ALL = True
 
 # CORS_ORIGIN_WHITELIST = (
-#     'localhost:80',
+#     'localhost',
 # )
