@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'api_client',
     'api_operator',
     'api_administrator',
-    'djoser',
+    'system',
 
     'rest_framework',
     'rest_framework.authtoken',
