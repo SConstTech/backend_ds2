@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'mod_wsgi.server'
 
 ]
 
@@ -98,7 +99,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'ds2_database',
         'USER': 'postgres',
-        'PASSWORD': 'ZPlcCoTvAe',
+        'PASSWORD': 'password',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
