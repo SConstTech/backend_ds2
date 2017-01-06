@@ -5,7 +5,7 @@ from django.contrib.auth import get_user_model
 from rest_framework import generics, permissions, status, response, views
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
-from braces.views import GroupRequiredMixin
+from rest_framework_jwt.authentication import JSONWebTokenAuthentication
 from . import serializers, settings, utils, signals
 
 from permissions import isOperator
@@ -37,9 +37,8 @@ class LogoutView(views.APIView):
     """
     Use this endpoint to logout user (remove user authentication token).
     """
-    permission_classes = (
-        permissions.IsAuthenticated,
-    )
+    permission_classes = (permissions.IsAuthenticated, )
+    authentication_classes = (JSONWebTokenAuthentication, )
 
     def post(self, request):
         utils.logout_user(request)
@@ -52,9 +51,8 @@ class UserView(generics.RetrieveUpdateAPIView):
     """
     model = User
     serializer_class = serializers.serializers_manager.get('user')
-    permission_classes = (
-        permissions.IsAuthenticated,
-    )
+    authentication_classes = (JSONWebTokenAuthentication, )
+    permission_classes = (permissions.IsAuthenticated, )
 
     def get_object(self, *args, **kwargs):
         return self.request.user
